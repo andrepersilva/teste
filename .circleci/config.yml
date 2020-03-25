@@ -1,11 +1,8 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@0.2.1
-
 jobs:
   build-and-test:
-    executor: python/default
+    - image: circleci/python:3.7.1
     steps:
       - run: pip install -r requirements.txt
       - run:
