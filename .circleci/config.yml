@@ -7,10 +7,7 @@ jobs:
   build-and-test:
     executor: python/default
     steps:
-      - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
+      - run: pip install -r requirements/dev.txt
       - run:
           command: calculo.py test
           name: Test
